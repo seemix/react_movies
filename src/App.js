@@ -17,7 +17,7 @@ const App = () => {
         <div className={darkMode ? 'dark-mode' : 'light-mode'}>
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
-                    <Route path={'home'} element={<HomePage/>}/>
+                    <Route index path={'/'} element={<HomePage/>}/>
                     <Route path={'genres'} element={<GenresPage/>}>
                         <Route path={':currentGenre'} element={<GenresList/>}>
                             <Route path={':currentPage'} element={<GenresList/>}/>

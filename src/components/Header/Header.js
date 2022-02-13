@@ -25,7 +25,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <NavLink to={'home'}>Home</NavLink>
+                    <NavLink to={'/'}>Home</NavLink>
                     <NavLink to={'movies'}>Movies</NavLink>
                     <NavLink to={'genres'}>Genres</NavLink>
                 </div>
