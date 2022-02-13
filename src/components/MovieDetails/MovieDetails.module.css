@@ -1,0 +1,25 @@
+.movie_wrapper {
+    display: flex;
+    gap: 50px;
+    padding: 10px 0px;
+    width: 95%;
+    justify-content: center;
+;
+}
+h1 {
+    text-align: center;
+}
+
+.wrap {
+    width: 1280px;
+    margin: 0 auto;
+}
+.back_button {
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 14px;
+    border: 1px solid;
+    margin-top: 20px;
+}

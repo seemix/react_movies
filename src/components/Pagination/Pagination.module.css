@@ -1,0 +1,29 @@
+.buttons_wrap {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+.buttons_wrap button {
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 14px;
+    border: 1px solid;
+}
+.buttons_wrap button:hover {
+    cursor: pointer;
+}
+
+.p_num_text {
+    font-size: 15px;
+    margin-top: 5px;
+}
+.input_text {
+    font-size: 17px;
+    font-weight: bolder;
+    color: #333333;
+    padding: 2px;
+}

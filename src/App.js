@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Route, Routes} from "react-router-dom";
+import {useSelector} from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.css';
+import Layout from "./components/Layout/Layout";
+import GenresPage from "./pages/GenresPage/GenresPage";
+import MoviesPage from "./pages/MoviesPage/MoviesPage";
+import MovieDetails from "./components/MovieDetails/MovieDetails";
+import Poster from "./components/Poster/Poster";
+import GenresList from "./components/GenresList/GenresList";
+import HomePage from "./pages/HomePage/HomePage";
+
+const App = () => {
+    const {darkMode} = useSelector(state => state['themeStore']);
+    return (
+        <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+            <Routes>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route path={'home'} element={<HomePage/>}/>
+                    <Route path={'genres'} element={<GenresPage/>}>
+                        <Route path={':currentGenre'} element={<GenresList/>}>
+                            <Route path={':currentPage'} element={<GenresList/>}/>
+                        </Route>
+                    </Route>
+                    <Route path={'movies'} element={<MoviesPage/>}>
+                        <Route path={':currentPage'} element={<MoviesPage/>}/>
+                    </Route>
+                    <Route path={'movie-details/:movieId'} element={<MovieDetails/>}/>
+                    <Route path={'poster/:posterPath'} element={<Poster/>}/>
+                </Route>
+            </Routes>
+        </div>
+
+    );
+};
 
 export default App;

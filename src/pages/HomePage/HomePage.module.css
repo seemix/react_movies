@@ -1,0 +1,9 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+.cards_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
